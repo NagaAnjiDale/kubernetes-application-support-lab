@@ -17,4 +17,6 @@ spec:
         - name: support-app
           image: nginx:latest
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 80
+              protocol: TCP
