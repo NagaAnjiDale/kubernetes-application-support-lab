@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: support-app
+  namespace: support-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: support-app
+  template:
+    metadata:
+      labels:
+        app: support-app
+    spec:
+      containers:
+        - name: support-app
+          image: nginx:latest
+          ports:
+            - containerPort: 80
